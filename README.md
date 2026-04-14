@@ -21,7 +21,7 @@ Brand identity guidelines for Buchfink.
 
 ## Wordmark
 
-| Orange | Blue | Green |
+|  |  |  |
 |---|---|---|
 | ![Orange](previews/ci_page-05.png) | ![Blue](previews/ci_page-07.png) | ![Green](previews/ci_page-09.png) |
 
