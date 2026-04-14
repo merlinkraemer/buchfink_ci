@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ae714e;
+        font-family: SpaceMono-Bold, 'Space Mono';
+        font-size: 51.88px;
+        font-weight: 700;
+        letter-spacing: .04em;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #2f583c;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-3" x="0" y="69.73" width="105.7" height="105.7" rx="33.36" ry="33.36"/>
+    <path class="cls-2" d="M80.21,119.07c1.01,0,1.87-.77,1.97-1.78.29-2.89.1-5.26-.06-6.55-.09-.68.2-1.34.74-1.75l7.77-5.78c.84-.62.76-1.9-.15-2.41-3.38-1.89-8.34-4.45-9.99-6.1-6.59-6.59-13.19-7.32-18.15-6.38-3.94.74-7.53,2.74-10.36,5.57l-22.89,22.89c-.85.85-.25,2.29.95,2.29h50.17ZM68.14,95.33c2.67-.51,4.96,1.79,4.46,4.46-.28,1.49-1.48,2.69-2.97,2.97-2.67.51-4.96-1.79-4.46-4.46.28-1.49,1.48-2.69,2.97-2.97Z"/>
+    <rect class="cls-2" x="11.89" y="123.56" width="70.67" height="13.53" rx="3.75" ry="3.75"/>
+    <rect class="cls-2" x="35.6" y="141.59" width="46.97" height="13.53" rx="3.75" ry="3.75"/>
+  </g>
+  <text class="cls-1" transform="translate(117.38 118.68)"><tspan x="0" y="0">BUCH</tspan><tspan x="0" y="44.05">FINK</tspan></text>
+</svg>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ae714e;
+        font-family: SpaceMono-Bold, 'Space Mono';
+        font-size: 97.81px;
+        font-weight: 700;
+        letter-spacing: .04em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(0 108.51)"><tspan x="0" y="0">buch</tspan><tspan x="0" y="83.05">fink</tspan></text>
+</svg>

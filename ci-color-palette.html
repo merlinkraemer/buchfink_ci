@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchfink Brand Identity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Rethink+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AGENT TOKENS: JSON.parse(document.getElementById('ci-tokens').textContent) -->
+    <script id="ci-tokens" type="application/json">
+{
+    "brand": "Buchfink",
+    "version": "1.0",
+    "typography": {
+        "display": { "family": "'Space Mono', monospace", "weights": [400, 700], "for": "logo, titles, section headings, monospace values, code, labels" },
+        "body": { "family": "'Rethink Sans', sans-serif", "weights": [400, 500, 600, 700], "for": "body, buttons, labels, nav, forms, tables, all UI text" }
+    },
+    "colors": {
+        "navy":       { "hex": "#153258", "role": "primary",  "for": "primary buttons, active nav, links, focus rings" },
+        "forest":     { "hex": "#2f583c", "role": "primary",  "for": "success, online status, confirmations" },
+        "copper":     { "hex": "#ae714e", "role": "accent",   "for": "logotype, brand accent, secondary CTAs" },
+        "gold":       { "hex": "#bc8938", "role": "accent",   "for": "warnings, premium, hover accents, pending" },
+        "sand":       { "hex": "#e1dcc8", "role": "neutral",  "for": "hover bg, subtle fills, chips" },
+        "warm-gray":  { "hex": "#8d847a", "role": "neutral",  "for": "disabled, placeholders, borders, icons" },
+        "umber":      { "hex": "#564f43", "role": "neutral",  "for": "body text, secondary headings, labels" },
+        "ink":        { "hex": "#2d2926", "role": "primary",  "for": "headlines, primary text, dark surfaces" },
+        "error":      { "hex": "#c0392b", "role": "semantic", "for": "errors, destructive actions" }
+    },
+    "light": {
+        "page-bg": "#f5f2ed", "surface": "#ffffff", "raised": "#ffffff",
+        "border": "#d6d0c4", "border-subtle": "#e8e4da",
+        "text-1": "#2d2926", "text-2": "#564f43", "text-3": "#8d847a", "text-inverse": "#ffffff"
+    },
+    "dark": {
+        "page-bg": "#1a1816", "surface": "#252220", "raised": "#302d2a",
+        "border": "#3d3935", "border-subtle": "#333028",
+        "text-1": "#e8e4da", "text-2": "#b0a99e", "text-3": "#7a746a", "text-inverse": "#1a1816"
+    },
+    "spacing": { "1":"4px","2":"8px","3":"12px","4":"16px","5":"20px","6":"24px","8":"32px","12":"48px","16":"64px" },
+    "radii": { "sm":"6px","md":"8px","lg":"12px","xl":"16px","full":"9999px" },
+    "shadows": {
+        "xs":"0 1px 2px rgba(45,41,38,0.05)","sm":"0 2px 8px rgba(45,41,38,0.06)",
+        "md":"0 4px 16px rgba(45,41,38,0.08)","lg":"0 8px 32px rgba(45,41,38,0.12)"
+    },
+    "components": {
+        "button": {
+            "font": "'Rethink Sans', sans-serif",
+            "weight": 600,
+            "sizes": {
+                "lg": { "font-size": "14px", "padding": "11px 24px", "radius": "12px" },
+                "md": { "font-size": "13px", "padding": "9px 20px", "radius": "8px" },
+                "sm": { "font-size": "12px", "padding": "6px 14px", "radius": "8px" }
+            },
+            "variants": {
+                "primary":   { "bg": "#ae714e", "text": "#fff", "hover-bg": "#c07f58", "note": "DEFAULT CTA — always copper for brand recognition" },
+                "secondary": { "bg": "#153258", "text": "#fff", "hover-bg": "#1a3d6e", "note": "secondary actions, nav-heavy contexts" },
+                "success":   { "bg": "#2f583c", "text": "#fff", "hover-bg": "#3a6d4c" },
+                "destructive": { "bg": "#c0392b", "text": "#fff", "hover-bg": "#a93226", "note": "always confirm with modal" },
+                "outline":   { "bg": "transparent", "border": "1.5px solid #d6d0c4", "text": "#2d2926", "hover-bg": "#e1dcc8" },
+                "ghost":     { "bg": "transparent", "text": "#564f43", "hover-bg": "#f5f2ed" }
+            },
+            "disabled": "opacity 0.35, cursor not-allowed"
+        },
+        "input": {
+            "font": "'Rethink Sans', sans-serif",
+            "font-size": "14px",
+            "padding": "10px 14px",
+            "border": "1.5px solid #d6d0c4",
+            "radius": "8px",
+            "focus": { "border": "#153258", "ring": "0 0 0 3px rgba(21,50,88,0.1)" },
+            "error": { "border": "#c0392b", "ring": "0 0 0 3px rgba(192,57,43,0.1)", "text": "#c0392b", "text-size": "12px" },
+            "placeholder": "#8d847a",
+            "disabled": "opacity 0.5, bg: #f5f2ed"
+        },
+        "badge": {
+            "font": "'Space Mono', monospace",
+            "font-size": "10px", "weight": 700,
+            "text-transform": "uppercase", "letter-spacing": "0.06em",
+            "padding": "3px 8px", "radius": "4px",
+            "variants": {
+                "brand":   { "bg": "rgba(174,113,78,0.1)", "text": "#ae714e" },
+                "info":    { "bg": "rgba(21,50,88,0.08)", "text": "#153258" },
+                "success": { "bg": "rgba(47,88,60,0.08)", "text": "#2f583c" },
+                "warning": { "bg": "rgba(188,137,56,0.1)", "text": "#bc8938" },
+                "error":   { "bg": "rgba(192,57,43,0.08)", "text": "#c0392b" }
+            }
+        },
+        "modal": {
+            "overlay": "rgba(45,41,38,0.4)",
+            "bg": "surface (#fff light / #252220 dark)",
+            "radius": "16px",
+            "shadow": "0 16px 48px rgba(45,41,38,0.16)",
+            "max-width": "480px",
+            "padding": "24px",
+            "close": "ghost button top-right"
+        },
+        "dropdown": {
+            "trigger": "inherits button styles (outline or ghost)",
+            "panel": { "bg": "surface", "border": "1px solid #d6d0c4", "radius": "8px", "shadow": "0 4px 16px rgba(45,41,38,0.08)" },
+            "item": { "padding": "8px 14px", "font-size": "13px", "hover-bg": "#f5f2ed", "active-bg": "rgba(21,50,88,0.06)" },
+            "selected": "color: #153258, font-weight: 600"
+        },
+        "toggle": { "width": "36px", "height": "20px", "radius": "10px", "off-bg": "#d6d0c4", "on-bg": "#153258", "knob": "16px white circle", "transition": "0.15s" },
+        "avatar": { "size-sm": "28px", "size-md": "36px", "size-lg": "48px", "radius": "full", "fallback-bg": "#e1dcc8", "fallback-text": "#564f43", "font": "'Space Mono', monospace" },
+        "tooltip": { "bg": "#2d2926", "text": "#e8e4da", "font-size": "12px", "padding": "6px 10px", "radius": "6px", "shadow": "0 4px 12px rgba(45,41,38,0.12)", "offset": "8px" },
+        "pagination": { "font": "'Space Mono', monospace", "font-size": "13px", "button-radius": "8px", "active-bg": "#153258", "active-text": "#fff", "gap": "4px" },
+        "skeleton": { "bg": "#e8e4da", "shimmer": "linear-gradient(90deg, #e8e4da 25%, #f5f2ed 50%, #e8e4da 75%)", "radius": "8px", "animation": "shimmer 1.5s ease infinite" },
+        "toast": {
+            "position": "bottom-right", "z-index": 9999,
+            "padding": "12px 20px", "radius": "8px",
+            "auto-dismiss": "5000ms", "stack": "upward",
+            "variants": { "success": "#2f583c", "error": "#c0392b", "warning": "#bc8938", "info": "#153258" }
+        },
+        "sidebar": {
+            "width": "260px", "bg": "surface",
+            "item": { "padding": "7px 12px", "radius": "8px", "font-size": "13px" },
+            "hover": "bg: #f5f2ed", "active": "bg: rgba(21,50,88,0.07), text: #153258, font-weight: 600",
+            "border": "border-right: 1px solid #d6d0c4",
+            "icons": "use Lucide or Phosphor icon set, stroke 1.5px, size 18px"
+        },
+        "table": {
+            "header": { "bg": "#f5f2ed", "font-size": "10px", "text-transform": "uppercase", "letter-spacing": "0.06em", "color": "#8d847a" },
+            "row": { "padding": "10px 16px", "border-bottom": "1px solid #e8e4da" },
+            "hover": "bg: rgba(225,220,200,0.3)",
+            "numeric-values": "font-family: 'Space Mono', monospace"
+        }
+    },
+    "motion": {
+        "default-easing": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "durations": { "instant": "75ms", "fast": "150ms", "normal": "250ms", "slow": "400ms" },
+        "enter": { "opacity": "0 → 1", "translateY": "8px → 0" },
+        "exit": { "opacity": "1 → 0", "translateY": "0 → -4px" },
+        "hover-lift": "translateY(-2px) + shadow upgrade",
+        "stagger": "50ms delay between sibling items",
+        "skeleton-shimmer": "1.5s ease infinite"
+    },
+    "rules": {
+        "text-dark-bg": "on dark/ink surfaces: white (#fff) or sand (#e1dcc8) ONLY — no colored text, no brand accents as text",
+        "text-light-bg": "ink (#2d2926) headlines, umber (#564f43) body — always on white (#fff) or page-bg (#f5f2ed)",
+        "color-backgrounds": "brand colors (navy, forest, copper, gold) as backgrounds only for small accents, buttons, badges — NOT for page or section backgrounds. Full-page surfaces: white or sand only.",
+        "accent": "copper is primary accent and DEFAULT button color. gold is secondary, use sparingly",
+        "button-hierarchy": "primary=copper (brand). secondary=navy. never use copper+gold as equals in one view",
+        "no-pure-black": "always #2d2926, never #000",
+        "no-cool-grays": "all grays warm-matched to #8d847a",
+        "no-emoji-icons": "use Lucide or Phosphor icons, never emoji in UI",
+        "destructive": "#c0392b, always confirm with modal",
+        "dark-mode": "opt-in toggle, accents unchanged, shadows -50% intensity",
+        "antipatterns": [
+            "copper text/icon on navy background — clashes, muddy",
+            "copper text/icon on forest background — clashes",
+            "navy text/icon on ink background — no contrast",
+            "navy text/icon on forest background — poor contrast, brand conflict",
+            "combo-forest logo — orange type on green bg fails contrast",
+            "any colored text on dark/ink — use white or sand only",
+            "brand color fills on large page surfaces — reserve for buttons, badges, small elements"
+        ]
+    },
+    "logoFiles": {
+        "icon-copper": "SVG/icon_orange.svg", "icon-navy": "SVG/icon_blue.svg",
+        "icon-forest": "SVG/icon_green.svg", "icon-transparent": "SVG/icon_without-bg.svg",
+        "combo-copper": "SVG/icon+type_orange.svg", "combo-navy": "SVG/icon-blue_type-orange.svg",
+        "combo-forest": "SVG/icon-green_type-orange.svg",
+        "type-upper": "SVG/type_uppercase.svg", "type-lower": "SVG/type_lowercase.svg"
+    },
+    "logoUsage": {
+        "default": "combo-copper (icon+type_orange.svg) — primary wordmark on white (#fff) or page-bg (#f5f2ed) only",
+        "on-dark": "combo-navy (icon-blue_type-orange.svg) — for dark/ink surfaces (#1a1816, #252220). White icon + copper type.",
+        "icon-only": "icon-copper for favicons, app icons, compact contexts. On white or sand backgrounds only.",
+        "type-only": "type_lowercase.svg for footers, attributions, minimal contexts. Use on white/sand only.",
+        "clearspace": "minimum clearspace = icon height × 0.5 on all four sides",
+        "forbidden": [
+            "combo-forest does NOT work — orange type on green background has insufficient contrast, do not use",
+            "do not place copper icon/type on navy (#153258) background — copper-on-blue clashes and reads muddy",
+            "do not place copper icon/type on forest (#2f583c) background — copper-on-green clashes",
+            "do not place navy icon on ink (#2d2926) background — near-identical dark values, no contrast",
+            "do not place navy icon on forest (#2f583c) background — blue-on-green has poor contrast and brand conflict",
+            "on dark/ink backgrounds: use only white text and white icons — never colored brand accents as text",
+            "do not recolor — only use provided SVG variants",
+            "do not stretch, skew, or distort proportions",
+            "do not substitute emoji or other icons for the Buchfink mark"
+        ],
+        "safe-backgrounds": ["#ffffff (white)", "#f5f2ed (page-bg)", "#e1dcc8 (sand)", "#1a1816 (ink-dark, navy combo only)"]
+    },
+    "personality": {
+        "adjectives": ["warm", "precise", "reliable", "earthy", "professional"],
+        "not": ["cold corporate", "generic tech blue", "playful or casual", "luxury or opulent", "minimal to the point of sterile"],
+        "feel": "A trusted professional tool with warmth — the opposite of sterile enterprise software. Like a well-made instrument: functional, handsome, built to last.",
+        "character": "The bird (Buchfink = chaffinch) — small, sharp, observant. The brand carries that precision without being clinical.",
+        "typography-voice": "Space Mono carries the technical precision and data-readiness. Rethink Sans carries the human warmth. Together they say: built by people who care about craft.",
+        "color-voice": "Earthy and grounded. Copper is the warmth and the brand. Navy is the authority. Forest is trust and forward momentum. No cool grays anywhere — every surface leans warm."
+    },
+    "voice": {
+        "tone": "Direct, confident, never verbose. Precise language. Avoids jargon but doesn't shy away from specificity.",
+        "sentence-style": "Short and declarative. Active voice. No filler words.",
+        "labels-and-ui-text": "Use Title Case for section headers, sentence case for descriptions. Space Mono for identifiers/codes/numbers. Rethink Sans for instructions and prose.",
+        "avoid": ["marketing speak", "exclamation marks in UI copy", "vague CTAs like 'Click here'", "passive voice"],
+        "examples": {
+            "good": ["Save changes", "12 records found", "Connection failed — check credentials", "Export as CSV"],
+            "bad": ["Click here to save your amazing changes!", "We found some records for you!", "Oops! Something went wrong."]
+        }
+    }
+}
+    </script>
+
+    <style>
+        :root{--navy:#153258;--forest:#2f583c;--copper:#ae714e;--gold:#bc8938;--sand:#e1dcc8;--warm-gray:#8d847a;--umber:#564f43;--ink:#2d2926;--error:#c0392b;--page:#f5f2ed;--surface:#fff;--border:#d6d0c4;--border-s:#e8e4da;--t1:#2d2926;--t2:#564f43;--t3:#8d847a;--fd:'Space Mono',monospace;--fb:'Rethink Sans',sans-serif}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:var(--fb);background:var(--page);color:var(--t1);-webkit-font-smoothing:antialiased;line-height:1.5}
+        .p{max-width:1100px;margin:0 auto;padding:36px 40px 56px}
+
+        header{display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;margin-bottom:28px;border-bottom:2px solid var(--ink)}
+        .h-logo{height:88px;width:auto}
+        .h-meta{text-align:right;font-size:11px;color:var(--t3);line-height:1.8}
+        .h-meta strong{color:var(--t2);font-weight:600}
+        .h-tip{font-family:var(--fd);font-size:8px;color:var(--copper);margin-top:4px;letter-spacing:.04em}
+
+        .sec{margin-bottom:32px}
+        .st{font-family:var(--fd);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:var(--t3);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+        .st::after{content:'';flex:1;height:1px;background:var(--border-s)}
+
+        /* Color table */
+        .ctable{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+        .cr{display:grid;grid-template-columns:40px 88px 76px 108px 84px 1fr;align-items:center;border-bottom:1px solid var(--border-s);min-height:38px}
+        .cr:last-child{border-bottom:none}
+        .cr-sw{height:38px}
+        .cr-name{font-family:var(--fd);font-size:10px;font-weight:700;padding:0 12px}
+        .cr-hex{font-family:var(--fd);font-size:10px;color:var(--t2)}
+        .cr-var{font-family:var(--fd);font-size:9px;color:var(--t3);padding:0 12px}
+        .cr-role{font-size:10px;color:var(--copper);font-weight:500}
+        .cr-use{font-size:11px;color:var(--t2);padding:0 14px}
+        .cr-head{background:var(--page);min-height:26px;font-family:var(--fd);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);display:flex;align-items:center;padding:0 14px;border-bottom:1px solid var(--border)}
+
+        /* Surfaces */
+        .surf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .sg{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+        .sg-head{padding:7px 12px;font-family:var(--fd);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);border-bottom:1px solid var(--border-s)}
+        .sg-row{display:grid;grid-template-columns:28px 68px 80px 1fr;align-items:center;gap:10px;padding:5px 12px;border-bottom:1px solid var(--border-s);font-size:11px}
+        .sg-row:last-child{border-bottom:none}
+        .sg-sw{width:22px;height:22px;border-radius:4px;border:1px solid rgba(0,0,0,.08);flex-shrink:0}
+        .sg-label{font-family:var(--fd);font-size:9px;color:var(--t3)}
+        .sg-hex{font-family:var(--fd);font-size:9px;color:var(--t2)}
+        .sg-use{font-size:10px;color:var(--t3)}
+
+        /* Logo */
+        .logo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:10px}
+        .lc{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+        .lc-p{height:76px;display:flex;align-items:center;justify-content:center;padding:12px;position:relative}
+        .lc-p img{max-width:100%;max-height:100%;object-fit:contain}
+        .lc-i{padding:6px 10px;border-top:1px solid var(--border-s);display:flex;justify-content:space-between;align-items:center}
+        .lc-n{font-family:var(--fd);font-size:8px;font-weight:700;color:var(--t2)}
+        .lc-t{font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--t3)}
+
+        /* Rules */
+        .g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+        .rl{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:11px 14px}
+        .rl-do{border-left:3px solid var(--forest)}.rl-w{border-left:3px solid var(--gold)}.rl-no{border-left:3px solid var(--error)}
+        .rl h4{font-family:var(--fd);font-size:9px;font-weight:700;margin-bottom:3px}
+        .rl p{font-size:11px;color:var(--t2);line-height:1.5}
+        .rl code{font-family:var(--fd);font-size:9px;background:var(--page);padding:1px 4px;border-radius:3px;color:var(--copper)}
+
+        /* Brand identity */
+        .bi{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .bi-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+        .bi-label{font-family:var(--fd);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:6px}
+        .bi-body{font-size:12px;color:var(--t2);line-height:1.6}
+        .bi-not{font-size:11px;color:var(--t3);margin-top:8px;padding-top:8px;border-top:1px solid var(--border-s)}
+        .bi-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;padding-top:10px;border-top:1px solid var(--border-s)}
+        .bi-col-label{font-family:var(--fd);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+        .bi-col-label.good{color:var(--forest)}.bi-col-label.bad{color:var(--error)}
+        .bi-examples{font-size:11px;color:var(--t2);line-height:1.9}
+        .bi-examples.bad{color:var(--t3);text-decoration:line-through}
+
+        /* Typography */
+        .type-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .type-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+        .type-roles{margin-top:10px;padding-top:10px;border-top:1px solid var(--border-s)}
+        .type-role-row{display:flex;gap:8px;font-size:11px;color:var(--t2);line-height:1.9}
+        .type-role-label{font-family:var(--fd);font-size:9px;color:var(--t3);width:56px;flex-shrink:0}
+
+        @media(max-width:800px){.bi,.surf-grid,.type-grid,.logo-grid,.g3{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}.p{padding:24px 20px 40px}header{flex-direction:column;gap:8px}.h-meta{text-align:left}.cr{grid-template-columns:36px 80px 72px 96px}.cr-role,.cr-use{display:none}}
+        @media(max-width:540px){.bi,.surf-grid,.type-grid,.logo-grid,.g3,.g2{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+<div class="p">
+
+    <header>
+        <img src="SVG/icon+type_orange.svg" alt="BUCHFINK" class="h-logo">
+        <div class="h-meta">
+            <strong>Brand Identity Reference v1.1</strong><br>
+            SaaS Platform · Space Mono + Rethink Sans · April 2026
+            <div class="h-tip">Agents: JSON.parse(document.getElementById('ci-tokens').textContent)</div>
+        </div>
+    </header>
+
+    <!-- BRAND IDENTITY -->
+    <div class="sec">
+        <div class="st">Brand Identity</div>
+        <div class="bi">
+            <div class="bi-card">
+                <div class="bi-label">Personality</div>
+                <div class="bi-body">A trusted professional tool with warmth — the opposite of sterile enterprise software. Like a well-made instrument: functional, handsome, built to last.</div>
+                <div class="bi-body" style="margin-top:6px;font-weight:500">Warm · Precise · Reliable · Earthy · Professional</div>
+                <div class="bi-not">NOT: cold corporate · generic tech blue · playful/casual · luxury/opulent</div>
+            </div>
+            <div class="bi-card">
+                <div class="bi-label">Voice &amp; Tone</div>
+                <div class="bi-body">Direct, confident, never verbose. Short declarative sentences. Active voice. No filler words or marketing speak.</div>
+                <div class="bi-row">
+                    <div>
+                        <div class="bi-col-label good">✓ Good</div>
+                        <div class="bi-examples">Save changes<br>12 records found<br>Connection failed — check credentials</div>
+                    </div>
+                    <div>
+                        <div class="bi-col-label bad">✗ Avoid</div>
+                        <div class="bi-examples bad">Click here to save!<br>Oops! Something went wrong.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div class="sec">
+        <div class="st">Typography</div>
+        <div class="type-grid">
+            <div class="type-card">
+                <div style="font-family:'Space Mono',monospace;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:.03em">Space Mono</div>
+                <div style="font-family:'Space Mono',monospace;font-size:11px;color:var(--t3);margin-top:4px">BUCHFINK buchfink 0123456789</div>
+                <div class="type-roles">
+                    <div class="type-role-row"><span class="type-role-label">Weights</span>400, 700</div>
+                    <div class="type-role-row"><span class="type-role-label">Use for</span>headings, labels, badges, numeric values, code, identifiers, section titles</div>
+                    <div class="type-role-row"><span class="type-role-label">Not for</span>body prose, descriptions, instructions</div>
+                </div>
+            </div>
+            <div class="type-card">
+                <div style="font-family:'Rethink Sans',sans-serif;font-size:22px;font-weight:700;color:var(--ink)">Rethink Sans</div>
+                <div style="font-family:'Rethink Sans',sans-serif;font-size:13px;color:var(--t2);margin-top:4px">The quick brown fox jumps over the lazy dog.</div>
+                <div class="type-roles">
+                    <div class="type-role-row"><span class="type-role-label">Weights</span>400, 500, 600, 700</div>
+                    <div class="type-role-row"><span class="type-role-label">Use for</span>body text, descriptions, buttons, forms, nav, all prose and instructions</div>
+                    <div class="type-role-row"><span class="type-role-label">Not for</span>headings, labels, data values</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- COLORS -->
+    <div class="sec">
+        <div class="st">Colors</div>
+        <div class="ctable">
+            <div class="cr-head">Brand palette — place on white (#fff) or page-bg (#f5f2ed) only</div>
+            <div class="cr"><div class="cr-sw" style="background:#153258"></div><div class="cr-name">Navy</div><div class="cr-hex">#153258</div><div class="cr-var">--navy</div><div class="cr-role">primary</div><div class="cr-use">buttons, active nav, links, focus rings, info state</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#2f583c"></div><div class="cr-name">Forest</div><div class="cr-hex">#2f583c</div><div class="cr-var">--forest</div><div class="cr-role">primary · success</div><div class="cr-use">success, online status, confirmations</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#ae714e"></div><div class="cr-name">Copper</div><div class="cr-hex">#ae714e</div><div class="cr-var">--copper</div><div class="cr-role">accent · brand</div><div class="cr-use">logotype, brand anchor, primary CTA — must appear on every surface</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#bc8938"></div><div class="cr-name">Gold</div><div class="cr-hex">#bc8938</div><div class="cr-var">--gold</div><div class="cr-role">accent · warning</div><div class="cr-use">warnings, premium indicators, pending state — use sparingly</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#c0392b"></div><div class="cr-name">Error</div><div class="cr-hex">#c0392b</div><div class="cr-var">--error</div><div class="cr-role">semantic</div><div class="cr-use">errors, destructive actions — always confirm with modal</div></div>
+            <div class="cr-head">Neutrals — all warm-tinted, no cool grays anywhere</div>
+            <div class="cr"><div class="cr-sw" style="background:#e1dcc8"></div><div class="cr-name">Sand</div><div class="cr-hex">#e1dcc8</div><div class="cr-var">--sand</div><div class="cr-role">neutral</div><div class="cr-use">hover backgrounds, subtle fills, chips, tags</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#8d847a"></div><div class="cr-name">Warm Gray</div><div class="cr-hex">#8d847a</div><div class="cr-var">--warm-gray</div><div class="cr-role">neutral</div><div class="cr-use">disabled states, placeholders, borders, muted icons</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#564f43"></div><div class="cr-name">Umber</div><div class="cr-hex">#564f43</div><div class="cr-var">--umber</div><div class="cr-role">neutral · body</div><div class="cr-use">body text, secondary headings, labels</div></div>
+            <div class="cr"><div class="cr-sw" style="background:#2d2926"></div><div class="cr-name">Ink</div><div class="cr-hex">#2d2926</div><div class="cr-var">--ink</div><div class="cr-role">primary · dark</div><div class="cr-use">headlines, primary text, dark surfaces — never use #000</div></div>
+        </div>
+    </div>
+
+    <!-- SURFACES -->
+    <div class="sec">
+        <div class="st">Surfaces</div>
+        <div class="surf-grid">
+            <div class="sg">
+                <div class="sg-head">Light mode</div>
+                <div class="sg-row"><div class="sg-sw" style="background:#f5f2ed"></div><div class="sg-label">page-bg</div><div class="sg-hex">#f5f2ed</div><div class="sg-use">page background</div></div>
+                <div class="sg-row"><div class="sg-sw" style="background:#ffffff;border-color:rgba(0,0,0,.1)"></div><div class="sg-label">surface</div><div class="sg-hex">#ffffff</div><div class="sg-use">cards, panels</div></div>
+                <div class="sg-row"><div class="sg-sw" style="background:#d6d0c4"></div><div class="sg-label">border</div><div class="sg-hex">#d6d0c4</div><div class="sg-use">default borders</div></div>
+                <div class="sg-row"><div class="sg-sw" style="background:#e8e4da"></div><div class="sg-label">border-subtle</div><div class="sg-hex">#e8e4da</div><div class="sg-use">dividers</div></div>
+                <div class="sg-row"><div class="sg-sw" style="background:#2d2926"></div><div class="sg-label">text-1</div><div class="sg-hex">#2d2926</div><div class="sg-use">headlines, primary</div></div>
+                <div class="sg-row"><div class="sg-sw" style="background:#564f43"></div><div class="sg-label">text-2</div><div class="sg-hex">#564f43</div><div class="sg-use">body, secondary</div></div>
+                <div class="sg-row"><div class="sg-sw" style="background:#8d847a"></div><div class="sg-label">text-3</div><div class="sg-hex">#8d847a</div><div class="sg-use">muted, placeholder</div></div>
+            </div>
+            <div class="sg" style="background:#1a1816">
+                <div class="sg-head" style="color:#7a746a;border-color:#3d3935">Dark mode</div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#1a1816;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">page-bg</div><div class="sg-hex" style="color:#b0a99e">#1a1816</div><div class="sg-use" style="color:#7a746a">page background</div></div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#252220;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">surface</div><div class="sg-hex" style="color:#b0a99e">#252220</div><div class="sg-use" style="color:#7a746a">cards, panels</div></div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#302d2a;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">raised</div><div class="sg-hex" style="color:#b0a99e">#302d2a</div><div class="sg-use" style="color:#7a746a">elevated panels</div></div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#3d3935;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">border</div><div class="sg-hex" style="color:#b0a99e">#3d3935</div><div class="sg-use" style="color:#7a746a">borders</div></div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#e8e4da;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">text-1</div><div class="sg-hex" style="color:#b0a99e">#e8e4da</div><div class="sg-use" style="color:#7a746a">primary text</div></div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#b0a99e;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">text-2</div><div class="sg-hex" style="color:#b0a99e">#b0a99e</div><div class="sg-use" style="color:#7a746a">secondary</div></div>
+                <div class="sg-row" style="border-color:#333028"><div class="sg-sw" style="background:#7a746a;border-color:#3d3935"></div><div class="sg-label" style="color:#7a746a">text-3</div><div class="sg-hex" style="color:#b0a99e">#7a746a</div><div class="sg-use" style="color:#7a746a">muted</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGO -->
+    <div class="sec">
+        <div class="st">Logo &amp; Usage</div>
+        <div class="logo-grid">
+            <div class="lc"><div class="lc-p" style="background:#fff"><img src="SVG/icon+type_orange.svg"></div><div class="lc-i"><span class="lc-n">combo-copper</span><span class="lc-t" style="color:var(--copper);font-weight:700">DEFAULT</span></div></div>
+            <div class="lc"><div class="lc-p" style="background:#1a1816"><img src="SVG/icon-blue_type-orange.svg"></div><div class="lc-i"><span class="lc-n">combo-navy</span><span class="lc-t">on dark only</span></div></div>
+            <div class="lc"><div class="lc-p" style="background:var(--copper)"><img src="SVG/icon_orange.svg"></div><div class="lc-i"><span class="lc-n">icon-copper</span><span class="lc-t">favicon / app</span></div></div>
+            <div class="lc" style="opacity:0.55"><div class="lc-p" style="background:var(--forest);position:relative"><img src="SVG/icon-green_type-orange.svg"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:'Space Mono',monospace;font-size:8px;font-weight:700;color:#c0392b;background:#fff;padding:2px 6px;border-radius:3px;border:1px solid #c0392b">✗ FAILS</span></div></div><div class="lc-i"><span class="lc-n" style="text-decoration:line-through;color:var(--t3)">combo-forest</span><span class="lc-t" style="color:var(--error)">do not use</span></div></div>
+        </div>
+        <div class="g2">
+            <div class="rl rl-do"><h4>Default wordmark</h4><p><code>combo-copper</code> on white or page-bg only. Primary mark in all branded contexts.</p></div>
+            <div class="rl rl-do"><h4>On dark surfaces</h4><p><code>combo-navy</code> on <code>#1a1816</code>–<code>#302d2a</code> only. Never use copper combo on dark.</p></div>
+            <div class="rl rl-no"><h4>Never recolor</h4><p>Use only the provided SVG variants. No CSS <code>fill</code>, <code>filter</code>, or <code>color</code> overrides on any logo element.</p></div>
+            <div class="rl rl-no"><h4>No distortion</h4><p>Preserve proportions. No stretching, skewing, rotation. Clearspace = icon height × 0.5 on all sides.</p></div>
+        </div>
+    </div>
+
+    <!-- ANTIPATTERNS -->
+    <div class="sec">
+        <div class="st">Antipatterns</div>
+        <div class="g3">
+            <div class="rl rl-no"><h4>Copper on navy or forest</h4><p>Copper text or icon on navy <span style="display:inline-block;width:9px;height:9px;background:#153258;border-radius:2px;vertical-align:middle"></span> or forest <span style="display:inline-block;width:9px;height:9px;background:#2f583c;border-radius:2px;vertical-align:middle"></span> backgrounds — muddy, fails contrast.</p></div>
+            <div class="rl rl-no"><h4>Navy on ink or forest</h4><p>Navy <span style="display:inline-block;width:9px;height:9px;background:#153258;border-radius:2px;vertical-align:middle"></span> on ink <span style="display:inline-block;width:9px;height:9px;background:#2d2926;border-radius:2px;vertical-align:middle"></span> disappears (near-identical darks). Navy on forest <span style="display:inline-block;width:9px;height:9px;background:#2f583c;border-radius:2px;vertical-align:middle"></span> clashes.</p></div>
+            <div class="rl rl-no"><h4>combo-forest logo</h4><p>Orange type on green background fails contrast. <code>icon-green_type-orange.svg</code> does not work — do not use under any circumstances.</p></div>
+            <div class="rl rl-no"><h4>Colored text on dark</h4><p>On dark/ink surfaces: white or sand (<code>#e1dcc8</code>) text and icons only. Never copper, gold, navy, or forest as text color on dark.</p></div>
+            <div class="rl rl-w"><h4>Brand colors as backgrounds</h4><p>Navy, forest, copper, gold are for buttons, badges, small accents only. Page and section backgrounds must be white or page-bg.</p></div>
+            <div class="rl rl-w"><h4>No generic tech palette</h4><p>No cyan, purple-to-blue gradients, or neon-on-dark. These signal generic AI tooling — incompatible with Buchfink.</p></div>
+        </div>
+    </div>
+
+    <!-- BRAND RULES -->
+    <div class="sec">
+        <div class="st">Brand Rules</div>
+        <div class="g3">
+            <div class="rl rl-do"><h4>Copper is the anchor</h4><p>Every Buchfink surface references copper — logotype, primary CTA, or a key accent. It is the brand's warmth signal.</p></div>
+            <div class="rl rl-do"><h4>Warmth everywhere</h4><p>All colors, surfaces, and type choices read warm. No cool grays. No sterile white-on-white. Every neutral leans warm.</p></div>
+            <div class="rl rl-do"><h4>Space Mono = data identity</h4><p>Use for values, identifiers, labels, anything signalling precision. Never for long prose — that belongs to Rethink Sans.</p></div>
+            <div class="rl rl-do"><h4>Accent hierarchy</h4><p>Copper = primary brand accent and default CTA. Gold = warning/premium, use sparingly. Never copper + gold as visual equals.</p></div>
+            <div class="rl rl-w"><h4>Surfaces stay warm</h4><p>Page: <code>#f5f2ed</code>. Cards: <code>#fff</code>. Do not use pure white as the page background — it reads cold against the palette.</p></div>
+            <div class="rl rl-w"><h4>Dark mode: accents unchanged</h4><p>In dark mode copper and gold remain the same hex values. Only surface and text tokens change. Shadows at 50% intensity.</p></div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
