@@ -4,7 +4,7 @@ Brand identity guidelines for Buchfink.
 
 ## Logo
 
-| | | |
+
 |---|---|---|
 | ![Logo Orange](previews/ci_page-01.png) | ![Logo Blue](ci/ci_page-06.png) | ![Logo Green](ci/ci_page-08.png) |
 
