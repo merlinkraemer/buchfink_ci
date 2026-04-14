@@ -1,7 +1,5 @@
 # Buchfink CI
 
-**booking but better**
-
 Brand identity guidelines for Buchfink.
 
 ## Logo
